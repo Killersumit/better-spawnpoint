@@ -1,0 +1,39 @@
+{
+  "include": [
+    "client/src/**/*",
+    "shared/**/*",
+    "server/**/*",
+    "scripts/**/*",
+    "drizzle/**/*",
+    "vite.config.ts",
+    "vitest.config.ts",
+    "drizzle.config.ts"
+  ],
+  "exclude": ["node_modules", "build", "dist"],
+  "compilerOptions": {
+    "incremental": true,
+    "tsBuildInfoFile": "./node_modules/.cache/tsbuildinfo",
+    "noEmit": true,
+    "module": "ESNext",
+    "target": "ES2022",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "verbatimModuleSyntax": false,
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "types": ["node", "vite/client"],
+    "paths": {
+      "@/*": ["./client/src/*"],
+      "@shared/*": ["./shared/*"],
+      "@legal/*": ["./legal/*"]
+    }
+  }
+}

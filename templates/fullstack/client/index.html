@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      Security note: a Content-Security-Policy is sent as a response header by
+      the server (server/_core/security.ts) rather than as a <meta> tag here,
+      because a meta CSP cannot use frame-ancestors and is not applied to
+      preloads. Do not add a second, weaker policy here.
+
+      Analytics is NOT loaded from this file. It is injected by
+      client/src/lib/analytics.ts only after the visitor consents to analytics
+      cookies. Never add a third-party script tag here; there is no way to gate
+      it, and it will make the cookie banner a lie.
+    -->
+    <title>Your App</title>
+    <meta name="description" content="A web application." />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:title" content="Your App" />
+    <meta property="og:description" content="A web application." />
+    <meta property="og:type" content="website" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="font-family: system-ui; padding: 2rem">
+        This application needs JavaScript. If you cannot enable it, email
+        support@example.com and we will help you another way.
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
