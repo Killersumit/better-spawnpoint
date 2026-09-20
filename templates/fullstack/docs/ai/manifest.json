@@ -1,0 +1,572 @@
+{
+  "generatedBy": "scripts/ai-context.ts",
+  "note": "Generated file — do not hand-edit. Run `npm run ai:context` after changing routes, routers, env or schema.",
+  "routes": {
+    "home": "/",
+    "login": "/login",
+    "signup": "/signup",
+    "forgotPassword": "/forgot-password",
+    "resetPassword": "/reset-password",
+    "verifyEmail": "/verify-email",
+    "dashboard": "/dashboard",
+    "settings": "/settings",
+    "admin": "/admin",
+    "notFound": "/404",
+    "privacy": "/privacy",
+    "terms": "/terms",
+    "cookies": "/cookies",
+    "dpa": "/dpa",
+    "subprocessors": "/subprocessors",
+    "accessibility": "/accessibility",
+    "security": "/security",
+    "aiDisclosure": "/ai-disclosure"
+  },
+  "publicRoutes": [
+    "/",
+    "/login",
+    "/signup",
+    "/forgot-password",
+    "/reset-password",
+    "/verify-email",
+    "/privacy",
+    "/terms",
+    "/cookies",
+    "/dpa",
+    "/subprocessors",
+    "/accessibility",
+    "/security",
+    "/ai-disclosure"
+  ],
+  "apiPrefixes": {
+    "base": "/api",
+    "trpc": "/api/trpc",
+    "health": "/api/health",
+    "auth": "/api/auth",
+    "oauth": "/api/auth/oauth",
+    "providers": "/api/auth/providers",
+    "files": "/api/files",
+    "compliance": "/api/compliance",
+    "cron": "/api/cron",
+    "jobs": "/api/jobs",
+    "webhooks": "/api/webhooks",
+    "metrics": "/api/metrics"
+  },
+  "cookie": {
+    "name": "app_session_id",
+    "sessionTtlMs": 2592000000
+  },
+  "procedures": [
+    {
+      "path": "account.cancelDeletion",
+      "kind": "mutation",
+      "access": "authedProcedure"
+    },
+    {
+      "path": "account.consentHistory",
+      "kind": "query",
+      "access": "authedProcedure"
+    },
+    {
+      "path": "account.deletionStatus",
+      "kind": "query",
+      "access": "authedProcedure"
+    },
+    {
+      "path": "account.exportData",
+      "kind": "mutation",
+      "access": "authedProcedure"
+    },
+    {
+      "path": "account.requestDeletion",
+      "kind": "mutation",
+      "access": "authedProcedure"
+    },
+    {
+      "path": "account.storageUsage",
+      "kind": "query",
+      "access": "authedProcedure"
+    },
+    {
+      "path": "admin.auditLog",
+      "kind": "query",
+      "access": "adminProcedure"
+    },
+    {
+      "path": "admin.deleteUser",
+      "kind": "mutation",
+      "access": "adminProcedure"
+    },
+    {
+      "path": "admin.jobs",
+      "kind": "query",
+      "access": "adminProcedure"
+    },
+    {
+      "path": "admin.listUsers",
+      "kind": "query",
+      "access": "adminProcedure"
+    },
+    {
+      "path": "admin.runJob",
+      "kind": "mutation",
+      "access": "adminProcedure"
+    },
+    {
+      "path": "admin.setRole",
+      "kind": "mutation",
+      "access": "adminProcedure"
+    },
+    {
+      "path": "admin.stats",
+      "kind": "query",
+      "access": "adminProcedure"
+    },
+    {
+      "path": "admin.suspendUser",
+      "kind": "mutation",
+      "access": "adminProcedure"
+    },
+    {
+      "path": "auth.changePassword",
+      "kind": "mutation",
+      "access": "authedProcedure"
+    },
+    {
+      "path": "auth.login",
+      "kind": "mutation",
+      "access": "publicProcedure"
+    },
+    {
+      "path": "auth.logout",
+      "kind": "mutation",
+      "access": "publicProcedure"
+    },
+    {
+      "path": "auth.me",
+      "kind": "query",
+      "access": "publicProcedure"
+    },
+    {
+      "path": "auth.providers",
+      "kind": "query",
+      "access": "publicProcedure"
+    },
+    {
+      "path": "auth.requestPasswordReset",
+      "kind": "mutation",
+      "access": "publicProcedure"
+    },
+    {
+      "path": "auth.resendVerification",
+      "kind": "mutation",
+      "access": "authedProcedure"
+    },
+    {
+      "path": "auth.resetPassword",
+      "kind": "mutation",
+      "access": "publicProcedure"
+    },
+    {
+      "path": "auth.revokeOtherSessions",
+      "kind": "mutation",
+      "access": "authedProcedure"
+    },
+    {
+      "path": "auth.sessions",
+      "kind": "query",
+      "access": "authedProcedure"
+    },
+    {
+      "path": "auth.signup",
+      "kind": "mutation",
+      "access": "publicProcedure"
+    },
+    {
+      "path": "auth.updateProfile",
+      "kind": "mutation",
+      "access": "authedProcedure"
+    },
+    {
+      "path": "auth.verifyEmail",
+      "kind": "mutation",
+      "access": "publicProcedure"
+    },
+    {
+      "path": "compliance.canSendMarketing",
+      "kind": "query",
+      "access": "authedProcedure"
+    },
+    {
+      "path": "compliance.config",
+      "kind": "query",
+      "access": "publicProcedure"
+    },
+    {
+      "path": "compliance.myConsentHistory",
+      "kind": "query",
+      "access": "authedProcedure"
+    },
+    {
+      "path": "compliance.recordConsent",
+      "kind": "mutation",
+      "access": "publicProcedure"
+    },
+    {
+      "path": "notes.archive",
+      "kind": "mutation",
+      "access": "authedProcedure"
+    },
+    {
+      "path": "notes.byId",
+      "kind": "query",
+      "access": "authedProcedure"
+    },
+    {
+      "path": "notes.count",
+      "kind": "query",
+      "access": "authedProcedure"
+    },
+    {
+      "path": "notes.create",
+      "kind": "mutation",
+      "access": "authedProcedure"
+    },
+    {
+      "path": "notes.delete",
+      "kind": "mutation",
+      "access": "authedProcedure"
+    },
+    {
+      "path": "notes.list",
+      "kind": "query",
+      "access": "authedProcedure"
+    },
+    {
+      "path": "notes.update",
+      "kind": "mutation",
+      "access": "authedProcedure"
+    },
+    {
+      "path": "system.askAi",
+      "kind": "mutation",
+      "access": "authedProcedure"
+    },
+    {
+      "path": "system.capabilities",
+      "kind": "query",
+      "access": "publicProcedure"
+    },
+    {
+      "path": "system.health",
+      "kind": "query",
+      "access": "publicProcedure"
+    },
+    {
+      "path": "system.jobs",
+      "kind": "query",
+      "access": "publicProcedure"
+    }
+  ],
+  "httpRoutes": [
+    "DELETE ${API.files}/*",
+    "GET ${API.compliance}/version",
+    "GET ${API.files}/*",
+    "GET ${API.files}/export/:exportId",
+    "GET /.well-known/security.txt",
+    "GET /api/auth/oauth/:provider/start",
+    "GET /api/auth/oauth/callback",
+    "GET /api/auth/providers",
+    "GET /api/dev/mailbox",
+    "GET /api/health",
+    "GET /robots.txt",
+    "GET /sitemap.xml",
+    "POST ${API.compliance}/consent",
+    "POST ${API.cron}/:jobName",
+    "POST ${API.files}/upload",
+    "POST ${API.webhooks}/stripe"
+  ],
+  "tables": [
+    "auditLogs",
+    "authTokens",
+    "consents",
+    "dataRequests",
+    "files",
+    "invitations",
+    "jobs",
+    "notes",
+    "oauthAccounts",
+    "sessions",
+    "users"
+  ],
+  "jobs": [
+    {
+      "name": "sessions.prune",
+      "cron": "17 * * * *",
+      "description": "Delete expired and revoked sessions older than the retention window.",
+      "retentionDays": 30
+    },
+    {
+      "name": "authTokens.prune",
+      "cron": "23 * * * *",
+      "description": "Delete used or expired password-reset / verification / invite tokens.",
+      "retentionDays": 7
+    },
+    {
+      "name": "users.purgeDeleted",
+      "cron": "41 3 * * *",
+      "description": "Hard-delete accounts whose deletion grace period has elapsed. Dependent rows go with them via ON DELETE CASCADE.",
+      "retentionDays": 30
+    },
+    {
+      "name": "dataRequests.process",
+      "cron": "*/15 * * * *",
+      "description": "Execute deletion requests whose grace period has elapsed; mark finished exports as complete.",
+      "retentionDays": null
+    },
+    {
+      "name": "consents.prune",
+      "cron": "5 4 * * 0",
+      "description": "Delete anonymised consent records past the retention window.",
+      "retentionDays": 400
+    },
+    {
+      "name": "scheduler.heartbeat",
+      "cron": "*/30 * * * *",
+      "description": "No-op heartbeat. Proves the scheduler is alive in logs and /api/health.",
+      "retentionDays": null
+    }
+  ],
+  "retention": {
+    "sessions": 30,
+    "auditLogs": 400,
+    "softDeletedUsers": 30,
+    "authTokens": 7,
+    "anonymousConsent": 400
+  },
+  "env": [
+    {
+      "name": "NODE_ENV",
+      "documented": true
+    },
+    {
+      "name": "PORT",
+      "documented": true
+    },
+    {
+      "name": "APP_ORIGIN",
+      "documented": true
+    },
+    {
+      "name": "APP_NAME",
+      "documented": true
+    },
+    {
+      "name": "OWNER_LEGAL_NAME",
+      "documented": true
+    },
+    {
+      "name": "OWNER_EMAIL",
+      "documented": true
+    },
+    {
+      "name": "OWNER_ADDRESS",
+      "documented": true
+    },
+    {
+      "name": "SESSION_SECRET",
+      "documented": true
+    },
+    {
+      "name": "CRON_SECRET",
+      "documented": true
+    },
+    {
+      "name": "DATABASE_URL",
+      "documented": true
+    },
+    {
+      "name": "AUTH_SIGNUP_MODE",
+      "documented": true
+    },
+    {
+      "name": "OAUTH_GOOGLE_CLIENT_ID",
+      "documented": true
+    },
+    {
+      "name": "OAUTH_GOOGLE_CLIENT_SECRET",
+      "documented": true
+    },
+    {
+      "name": "OAUTH_GITHUB_CLIENT_ID",
+      "documented": true
+    },
+    {
+      "name": "OAUTH_GITHUB_CLIENT_SECRET",
+      "documented": true
+    },
+    {
+      "name": "MAIL_DRIVER",
+      "documented": true
+    },
+    {
+      "name": "MAIL_FROM",
+      "documented": true
+    },
+    {
+      "name": "MAIL_REPLY_TO",
+      "documented": true
+    },
+    {
+      "name": "MAIL_API_KEY",
+      "documented": true
+    },
+    {
+      "name": "MAIL_WEBHOOK_URL",
+      "documented": true
+    },
+    {
+      "name": "STORAGE_DRIVER",
+      "documented": true
+    },
+    {
+      "name": "STORAGE_LOCAL_DIR",
+      "documented": true
+    },
+    {
+      "name": "STORAGE_MAX_UPLOAD_BYTES",
+      "documented": true
+    },
+    {
+      "name": "S3_ENDPOINT",
+      "documented": true
+    },
+    {
+      "name": "S3_REGION",
+      "documented": true
+    },
+    {
+      "name": "S3_BUCKET",
+      "documented": true
+    },
+    {
+      "name": "S3_ACCESS_KEY_ID",
+      "documented": true
+    },
+    {
+      "name": "S3_SECRET_ACCESS_KEY",
+      "documented": true
+    },
+    {
+      "name": "S3_FORCE_PATH_STYLE",
+      "documented": true
+    },
+    {
+      "name": "LLM_BASE_URL",
+      "documented": true
+    },
+    {
+      "name": "LLM_API_KEY",
+      "documented": true
+    },
+    {
+      "name": "LLM_MODEL",
+      "documented": true
+    },
+    {
+      "name": "LLM_PROVIDER_LABEL",
+      "documented": true
+    },
+    {
+      "name": "LLM_PROVIDER_URL",
+      "documented": true
+    },
+    {
+      "name": "STRIPE_SECRET_KEY",
+      "documented": true
+    },
+    {
+      "name": "STRIPE_WEBHOOK_SECRET",
+      "documented": true
+    },
+    {
+      "name": "COOKIE_SAMESITE",
+      "documented": false
+    },
+    {
+      "name": "COOKIE_SECURE",
+      "documented": false
+    }
+  ],
+  "policies": [
+    {
+      "slug": "privacy",
+      "title": "Privacy Policy",
+      "file": "legal/policies/privacy.md",
+      "route": "/privacy"
+    },
+    {
+      "slug": "terms",
+      "title": "Terms of Service",
+      "file": "legal/policies/terms.md",
+      "route": "/terms"
+    },
+    {
+      "slug": "cookies",
+      "title": "Cookie Policy",
+      "file": "legal/policies/cookies.md",
+      "route": "/cookies"
+    },
+    {
+      "slug": "dpa",
+      "title": "Data Processing Addendum",
+      "file": "legal/policies/dpa.md",
+      "route": "/dpa"
+    },
+    {
+      "slug": "subprocessors",
+      "title": "Sub-processors",
+      "file": "legal/policies/subprocessors.md",
+      "route": "/subprocessors"
+    },
+    {
+      "slug": "accessibility",
+      "title": "Accessibility Statement",
+      "file": "legal/policies/accessibility.md",
+      "route": "/accessibility"
+    },
+    {
+      "slug": "security",
+      "title": "Security",
+      "file": "legal/policies/security.md",
+      "route": "/security"
+    },
+    {
+      "slug": "ai-disclosure",
+      "title": "AI Disclosure",
+      "file": "legal/policies/ai-disclosure.md",
+      "route": "/ai-disclosure"
+    }
+  ],
+  "compliance": {
+    "version": "2026-09-01",
+    "regimes": {
+      "$comment": "Enable only what applies. Each enabled regime must have its policy pages and its data-subject endpoints live; verify enforces that.",
+      "gdpr": true,
+      "ukGdpr": false,
+      "ccpaCpra": true,
+      "coppa": false,
+      "aiActTransparency": true,
+      "pciDss": false,
+      "$notes": {
+        "gdpr": "EU/EEA users → lawful basis, Art. 15 access, Art. 17 erasure, Art. 30 records, DPAs, transfer mechanism.",
+        "ukGdpr": "UK users → ICO registration may be required; UK IDTA for transfers.",
+        "ccpaCpra": "California users → 'Do Not Sell or Share', disclosure of categories, 12-month lookback.",
+        "coppa": "Under-13 users (US) → verifiable parental consent. Leave false unless you truly serve children.",
+        "aiActTransparency": "EU AI Act Art. 50 → disclose AI-generated content to end users.",
+        "pciDss": "Set true only if card data touches your servers. Using a hosted checkout keeps you at SAQ-A."
+      }
+    },
+    "subprocessors": 3,
+    "cookies": 5
+  }
+}

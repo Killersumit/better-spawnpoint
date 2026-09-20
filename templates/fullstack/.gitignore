@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Environment (never commit real values; .env.example is the committed one)
+.env
+.env.local
+.env.*.local
+
+# Runtime data
+.data/
+.dev/
+logs/
+*.log
+pids/
+*.pid
+
+# Test output
+coverage/
+.vitest/
+
+# Generated artifacts (regenerate with `npm run ai:context` / `legal:licenses`)
+.ai/manifest.json
+legal/generated/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# Databases
+*.sqlite
+*.sqlite3
+*.db

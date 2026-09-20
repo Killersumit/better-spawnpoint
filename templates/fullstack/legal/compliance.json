@@ -1,0 +1,232 @@
+{
+  "$comment": [
+    "MACHINE-READABLE COMPLIANCE MANIFEST — single source of truth.",
+    "Legal pages, the cookie banner, the consent log, and the data export all",
+    "read from this file. `npm run verify` fails when code and this file",
+    "disagree (retention windows, cookie categories, enabled regimes).",
+    "",
+    "Edit values here, never inside the policy markdown templates."
+  ],
+  "version": "2026-09-01",
+
+  "organization": {
+    "productName": "Your App",
+    "legalName": "Your Company Ltd",
+    "address": "1 Example Street, Example City, Country",
+    "country": "Country",
+    "privacyEmail": "privacy@example.com",
+    "securityEmail": "security@example.com",
+    "supportEmail": "support@example.com",
+    "dpo": null,
+    "euRepresentative": null,
+    "ukRepresentative": null
+  },
+
+  "product": {
+    "description": "A web application.",
+    "url": "https://example.com",
+    "effectiveDate": "2026-09-01",
+    "minimumAge": 16,
+    "governingLaw": "the laws of Country",
+    "disputeVenue": "the courts of Example City, Country"
+  },
+
+  "regimes": {
+    "$comment": "Enable only what applies. Each enabled regime must have its policy pages and its data-subject endpoints live; verify enforces that.",
+    "gdpr": true,
+    "ukGdpr": false,
+    "ccpaCpra": true,
+    "coppa": false,
+    "aiActTransparency": true,
+    "pciDss": false,
+    "$notes": {
+      "gdpr": "EU/EEA users → lawful basis, Art. 15 access, Art. 17 erasure, Art. 30 records, DPAs, transfer mechanism.",
+      "ukGdpr": "UK users → ICO registration may be required; UK IDTA for transfers.",
+      "ccpaCpra": "California users → 'Do Not Sell or Share', disclosure of categories, 12-month lookback.",
+      "coppa": "Under-13 users (US) → verifiable parental consent. Leave false unless you truly serve children.",
+      "aiActTransparency": "EU AI Act Art. 50 → disclose AI-generated content to end users.",
+      "pciDss": "Set true only if card data touches your servers. Using a hosted checkout keeps you at SAQ-A."
+    }
+  },
+
+  "dataInventory": [
+    {
+      "category": "Account identifiers",
+      "examples": "Email address, display name, avatar URL",
+      "purpose": "Creating and securing your account, signing you in, service emails",
+      "lawfulBasis": "Contract (GDPR Art. 6(1)(b))",
+      "retention": "Until you delete your account, then 30 days in a recoverable state",
+      "recipients": "Hosting provider, email delivery provider",
+      "personalData": true,
+      "sensitive": false,
+      "thirdCountryTransfer": true
+    },
+    {
+      "category": "Authentication data",
+      "examples": "Password hash (scrypt), session identifiers",
+      "purpose": "Proving it is you and keeping sessions secure",
+      "lawfulBasis": "Contract and legitimate interests (security)",
+      "retention": "Sessions expire after 30 days; hashes are deleted with the account",
+      "recipients": "Hosting provider only",
+      "personalData": true,
+      "sensitive": false,
+      "thirdCountryTransfer": true
+    },
+    {
+      "category": "Usage and device data",
+      "examples": "IP address, user agent, pages viewed (only if analytics consent is given)",
+      "purpose": "Security, rate limiting, and aggregate product analytics",
+      "lawfulBasis": "Consent for analytics; legitimate interests for security",
+      "retention": "Security logs 90 days; analytics 14 months",
+      "recipients": "Analytics provider (only with consent), hosting provider",
+      "personalData": true,
+      "sensitive": false,
+      "thirdCountryTransfer": true
+    },
+    {
+      "category": "Consent records",
+      "examples": "Which cookie categories you accepted, when, and from which IP",
+      "purpose": "Demonstrating that consent was properly obtained",
+      "lawfulBasis": "Legal obligation (GDPR Art. 7(1))",
+      "retention": "400 days, then anonymised",
+      "recipients": "None",
+      "personalData": true,
+      "sensitive": false,
+      "thirdCountryTransfer": false
+    },
+    {
+      "category": "Payment and billing",
+      "examples": "Customer id, plan, invoice history (card numbers never reach our servers)",
+      "purpose": "Charging for paid plans and meeting tax obligations",
+      "lawfulBasis": "Contract and legal obligation",
+      "retention": "10 years for tax records",
+      "recipients": "Payment processor",
+      "personalData": true,
+      "sensitive": false,
+      "thirdCountryTransfer": true
+    },
+    {
+      "category": "Support correspondence",
+      "examples": "Messages you send us, attachments you include",
+      "purpose": "Answering your questions and resolving disputes",
+      "lawfulBasis": "Legitimate interests",
+      "retention": "3 years after the last message",
+      "recipients": "Helpdesk provider, email delivery provider",
+      "personalData": true,
+      "sensitive": false,
+      "thirdCountryTransfer": true
+    }
+  ],
+
+  "subprocessors": [
+    {
+      "name": "Hosting provider",
+      "purpose": "Runs the application servers",
+      "location": "Country / region",
+      "dataCategories": "All data stored by the service",
+      "dpaUrl": "https://example.com/dpa",
+      "transferMechanism": "SCCs",
+      "$example": true
+    },
+    {
+      "name": "Email delivery provider",
+      "purpose": "Delivers transactional and (opted-in) product email",
+      "location": "United States",
+      "dataCategories": "Email address, email content",
+      "dpaUrl": "https://example.com/dpa",
+      "transferMechanism": "EU-US Data Privacy Framework"
+    },
+    {
+      "name": "Payment processor",
+      "purpose": "Processes subscription payments",
+      "location": "United States and Ireland",
+      "dataCategories": "Billing details, invoice history",
+      "dpaUrl": "https://example.com/dpa",
+      "transferMechanism": "SCCs",
+      "$comment": "Remove this entry if you do not take payments."
+    }
+  ],
+
+  "cookies": [
+    {
+      "name": "app_session_id",
+      "category": "strictly_necessary",
+      "purpose": "Keeps you signed in",
+      "duration": "30 days",
+      "provider": "First party"
+    },
+    {
+      "name": "__Host-oauth_state",
+      "category": "strictly_necessary",
+      "purpose": "Prevents cross-site request forgery during sign-in",
+      "duration": "10 minutes",
+      "provider": "First party"
+    },
+    {
+      "name": "spawnpoint.consent",
+      "category": "strictly_necessary",
+      "purpose": "Remembers your cookie choices (local storage, not a cookie)",
+      "duration": "12 months",
+      "provider": "First party"
+    },
+    {
+      "name": "theme",
+      "category": "functional",
+      "purpose": "Remembers light/dark preference",
+      "duration": "Persistent",
+      "provider": "First party"
+    },
+    {
+      "name": "_ga / analytics cookie",
+      "category": "analytics",
+      "purpose": "Counts visits and page views in aggregate",
+      "duration": "14 months",
+      "provider": "Analytics provider",
+      "$comment": "Loaded ONLY after analytics consent. See client/src/lib/analytics.ts."
+    }
+  ],
+
+  "retention": {
+    "$comment": "From legal/compliance.json → session retention and users.purgeDeleted and consents.prune verify against these numbers.",
+    "sessions": 30,
+    "authTokens": 7,
+    "softDeletedUsers": 30,
+    "auditLogs": 400,
+    "anonymousConsent": 400
+  },
+
+  "transfers": {
+    "mechanism": "Standard Contractual Clauses and, where available, the EU-US Data Privacy Framework",
+    "transferImpactAssessmentDate": "2026-09-01",
+    "additionalSafeguards": "Encryption in transit and at rest, data minimisation, access on a need-to-know basis"
+  },
+
+  "security": {
+    "encryptionInTransit": "TLS 1.2+",
+    "encryptionAtRest": "Provider-managed disk encryption",
+    "passwordHashing": "scrypt (N=2^15, r=8, p=1) with per-user salt",
+    "mfaAvailable": false,
+    "backupFrequency": "Daily",
+    "backupRetentionDays": 30,
+    "incidentResponseCommitment": "We notify affected users and supervisory authorities within 72 hours of becoming aware of a personal data breach.",
+    "disclosurePolicy": "Coordinated disclosure. We publish a hall-of-fame entry, and we will not pursue legal action against good-faith research."
+  },
+
+  "ai": {
+    "featuresUseAI": true,
+    "providerLabel": "the model provider",
+    "providerUrl": "https://example.com/ai-policy",
+    "humanReview": "Model output is presented as a draft only; nothing is published or billed automatically without a human action.",
+    "trainingOnUserData": false,
+    "disclosureText": "Some content in this product is generated by an AI model. It can be wrong. Verify anything important before acting on it."
+  },
+
+  "accessibility": {
+    "standard": "WCAG 2.2 Level AA",
+    "targetDate": "2026-12-31",
+    "conformanceStatus": "Partially conformant",
+    "knownLimitations": "Some third-party embedded content is not yet fully labelled; keyboard access to the chart tooltips is partial.",
+    "feedbackEmail": "accessibility@example.com",
+    "euAccessibilityActApplies": true
+  }
+}

@@ -1,0 +1,19 @@
+# better-spawnpoint — repository root
+#
+# The starter template has its own .gitignore at templates/fullstack/.gitignore;
+# this file only needs to cover what exists at the repository root.
+
+# The Manus full-stack app archive was analysed once to derive the template and
+# is deliberately NOT tracked: its .project-config.json contained live secrets
+# (a TiDB DATABASE_URL, a JWT_SECRET, Forge keys and a Cloudflare token). Keep it
+# out of the repository so a clone never ships credentials.
+full-stack-app.zip
+
+# Node
+node_modules/
+*.log
+npm-debug.log*
+
+# OS / editors
+.DS_Store
+Thumbs.db
